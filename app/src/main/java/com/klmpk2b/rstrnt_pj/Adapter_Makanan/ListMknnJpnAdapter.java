@@ -45,6 +45,7 @@ public class ListMknnJpnAdapter extends RecyclerView.Adapter<ListMknnJpnAdapter.
         categoryViewHolder.tvName.setText(getListMknJpn().get(position).getNamemknjpn());
         Glide.with(context)
                 .load(getListMknJpn().get(position).getPhotojpn())
+                .thumbnail(Glide.with(context).load(R.drawable.fried_egg_loader))
                 .apply(new RequestOptions().override(490,430))
                 .into(categoryViewHolder.imgPhoto);
     }

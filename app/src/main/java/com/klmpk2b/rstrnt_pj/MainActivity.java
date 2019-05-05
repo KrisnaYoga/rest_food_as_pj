@@ -5,7 +5,25 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+//Adapter
+import com.klmpk2b.rstrnt_pj.Adapter_Makanan.ListMknnChnAdapter;
+import com.klmpk2b.rstrnt_pj.Adapter_Makanan.ListMknnIdnAdapter;
+import com.klmpk2b.rstrnt_pj.Adapter_Makanan.ListMknnJpnAdapter;
 import com.klmpk2b.rstrnt_pj.Adapter_Makanan.ListMknnKorAdapter;
+
+//Indonesia
+import com.klmpk2b.rstrnt_pj.Menu_List_Makanan.Makanan_Indonesia.Mkn_Idn;
+import com.klmpk2b.rstrnt_pj.Menu_List_Makanan.Makanan_Indonesia.Mkn_Idn_Data;
+
+//Jepang
+import com.klmpk2b.rstrnt_pj.Menu_List_Makanan.Makanan_Jepang.Mkn_Jpn;
+import com.klmpk2b.rstrnt_pj.Menu_List_Makanan.Makanan_Jepang.Mkn_Jpn_Data;
+
+//Chinese
+import com.klmpk2b.rstrnt_pj.Menu_List_Makanan.Makanan_China.Mkn_Chn;
+import com.klmpk2b.rstrnt_pj.Menu_List_Makanan.Makanan_China.Mkn_Chn_Data;
+
+//Korea
 import com.klmpk2b.rstrnt_pj.Menu_List_Makanan.Makanan_Korea.Mkn_Kor;
 import com.klmpk2b.rstrnt_pj.Menu_List_Makanan.Makanan_Korea.Mkn_Kor_Data;
 
@@ -16,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView rvCategory;
     //private ArrayList<Mkn_Idn> list_idn = new ArrayList<>();
     //private ArrayList<Mkn_Jpn> list_jpn = new ArrayList<>();
-    //private ArrayList<Mkn_Chn> list_chn = new ArrayList<>();
-    private ArrayList<Mkn_Kor> list_kor = new ArrayList<>();
+    private ArrayList<Mkn_Chn> list_chn = new ArrayList<>();
+    //private ArrayList<Mkn_Kor> list_kor = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +51,11 @@ public class MainActivity extends AppCompatActivity {
         //list_jpn.addAll(Mkn_Jpn_Data.getListData());
         //showRecyclerListMknJpn();
 
-        //list_chn.addAll(Mkn_Chn_Data.getListData());
-        //showRecyclerListMknJpn();
+        list_chn.addAll(Mkn_Chn_Data.getListData());
+        showRecyclerListMknChn();
 
-        list_kor.addAll(Mkn_Kor_Data.getListData());
-        showRecyclerListMknKor();
+        //list_kor.addAll(Mkn_Kor_Data.getListData());
+        //showRecyclerListMknKor();
     }
 
     //private void showRecyclerListMknIdn(){
@@ -54,17 +72,17 @@ public class MainActivity extends AppCompatActivity {
         //rvCategory.setAdapter(listMknnJpnAdapter);
     //}
 
-    //private void showRecyclerListMknJpn(){
-        //rvCategory.setLayoutManager(new LinearLayoutManager(this));
-        //ListMknnChnAdapter listMknnChnAdapter = new ListMknnChnAdapter(this);
-        //listMknnChnAdapter.setListMknChn(list_chn);
-        //rvCategory.setAdapter(listMknnChnAdapter);
-    //}
-
-    private void showRecyclerListMknKor(){
+    private void showRecyclerListMknChn(){
         rvCategory.setLayoutManager(new LinearLayoutManager(this));
-        ListMknnKorAdapter listMknnKorAdapter = new ListMknnKorAdapter(this);
-        listMknnKorAdapter.setListMknKor(list_kor);
-        rvCategory.setAdapter(listMknnKorAdapter);
+        ListMknnChnAdapter listMknnChnAdapter = new ListMknnChnAdapter(this);
+        listMknnChnAdapter.setListMknChn(list_chn);
+        rvCategory.setAdapter(listMknnChnAdapter);
     }
+
+    //private void showRecyclerListMknKor(){
+        //rvCategory.setLayoutManager(new LinearLayoutManager(this));
+        //ListMknnKorAdapter listMknnKorAdapter = new ListMknnKorAdapter(this);
+        //listMknnKorAdapter.setListMknKor(list_kor);
+        //rvCategory.setAdapter(listMknnKorAdapter);
+    //}
 }

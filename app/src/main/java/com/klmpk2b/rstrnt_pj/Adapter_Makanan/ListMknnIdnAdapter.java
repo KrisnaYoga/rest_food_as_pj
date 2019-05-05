@@ -44,6 +44,7 @@ public class ListMknnIdnAdapter extends RecyclerView.Adapter<ListMknnIdnAdapter.
         categoryViewHolder.tvName.setText(getListMknIdn().get(position).getNamemknidn());
         Glide.with(context)
                 .load(getListMknIdn().get(position).getPhotoidn())
+                .thumbnail(Glide.with(context).load(R.drawable.fried_egg_loader))
                 .apply(new RequestOptions().override(490,430))
                 .into(categoryViewHolder.imgPhoto);
     }

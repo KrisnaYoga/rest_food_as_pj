@@ -44,6 +44,7 @@ public class ListMknnKorAdapter extends RecyclerView.Adapter<ListMknnKorAdapter.
         categoryViewHolder.tvName.setText(getListMknKor().get(position).getNamemknkor());
         Glide.with(context)
                 .load(getListMknKor().get(position).getPhotokor())
+                .thumbnail(Glide.with(context).load(R.drawable.fried_egg_loader))
                 .apply(new RequestOptions().override(490,430))
                 .into(categoryViewHolder.imgPhoto);
     }
