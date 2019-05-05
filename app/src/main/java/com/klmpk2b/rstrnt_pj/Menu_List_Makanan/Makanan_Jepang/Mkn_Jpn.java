@@ -1,4 +1,4 @@
-package com.klmpk2b.rstrnt_pj.Makanan_Jepang;
+package com.klmpk2b.rstrnt_pj.Menu_List_Makanan.Makanan_Jepang;
 
 public class Mkn_Jpn {
     public String namemknjpn, jenisjpn, hargajpn, photojpn;

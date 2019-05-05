@@ -1,4 +1,4 @@
-package com.klmpk2b.rstrnt_pj.Makanan_Indonesia;
+package com.klmpk2b.rstrnt_pj.Menu_List_Makanan.Makanan_Indonesia;
 
 import java.util.ArrayList;
 

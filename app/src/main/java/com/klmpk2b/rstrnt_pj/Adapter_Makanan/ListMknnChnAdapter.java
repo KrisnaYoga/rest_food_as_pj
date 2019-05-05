@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.klmpk2b.rstrnt_pj.Makanan_China.Mkn_Chn;
+import com.klmpk2b.rstrnt_pj.Menu_List_Makanan.Makanan_China.Mkn_Chn;
 import com.klmpk2b.rstrnt_pj.R;
 
 import java.util.ArrayList;

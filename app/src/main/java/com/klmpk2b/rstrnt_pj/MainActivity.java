@@ -5,9 +5,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.klmpk2b.rstrnt_pj.Adapter_Makanan.ListMknnChnAdapter;
-import com.klmpk2b.rstrnt_pj.Makanan_China.Mkn_Chn;
-import com.klmpk2b.rstrnt_pj.Makanan_China.Mkn_Chn_Data;
+import com.klmpk2b.rstrnt_pj.Adapter_Makanan.ListMknnKorAdapter;
+import com.klmpk2b.rstrnt_pj.Menu_List_Makanan.Makanan_Korea.Mkn_Kor;
+import com.klmpk2b.rstrnt_pj.Menu_List_Makanan.Makanan_Korea.Mkn_Kor_Data;
 
 import java.util.ArrayList;
 
