@@ -11,46 +11,46 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.klmpk2b.rstrnt_pj.Makanan_Indonesia.Mkn_Idn;
+import com.klmpk2b.rstrnt_pj.Makanan_China.Mkn_Chn;
 import com.klmpk2b.rstrnt_pj.R;
 
 import java.util.ArrayList;
 
-public class ListMknnIdnAdapter extends RecyclerView.Adapter<ListMknnIdnAdapter.CategoryViewHolder> {
-    private ArrayList<Mkn_Idn> listMknIdn;
+public class ListMknnChnAdapter extends RecyclerView.Adapter<ListMknnChnAdapter.CategoryViewHolder> {
     private Context context;
+    private ArrayList<Mkn_Chn> listMknChn;
 
-    public ListMknnIdnAdapter(Context context) {
+    public ListMknnChnAdapter(Context context) {
         this.context = context;
     }
 
-    public ArrayList<Mkn_Idn> getListMknIdn() {
-        return listMknIdn;
+    public ArrayList<Mkn_Chn> getListMknChn() {
+        return listMknChn;
     }
 
-    public void setListMknIdn(ArrayList<Mkn_Idn> listMknIdn) {
-        this.listMknIdn = listMknIdn;
+    public void setListMknChn(ArrayList<Mkn_Chn> listMknChn) {
+        this.listMknChn = listMknChn;
     }
 
     @NonNull
     @Override
     public CategoryViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View itemrow = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_mknn_idn, viewGroup, false);
+        View itemrow = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_mknn_chn, viewGroup, false);
         return new CategoryViewHolder(itemrow);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CategoryViewHolder categoryViewHolder, int position) {
-        categoryViewHolder.tvName.setText(getListMknIdn().get(position).getNamemknidn());
+        categoryViewHolder.tvName.setText(getListMknChn().get(position).getNamemknchn());
         Glide.with(context)
-                .load(getListMknIdn().get(position).getPhotoidn())
+                .load(getListMknChn().get(position).getPhotochn())
                 .apply(new RequestOptions().override(490,430))
                 .into(categoryViewHolder.imgPhoto);
     }
 
     @Override
     public int getItemCount() {
-        return getListMknIdn().size();
+        return getListMknChn().size();
     }
 
     public class CategoryViewHolder extends RecyclerView.ViewHolder {
