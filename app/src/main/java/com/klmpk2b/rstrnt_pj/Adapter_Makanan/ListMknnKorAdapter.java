@@ -6,7 +6,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -17,6 +19,7 @@ import com.klmpk2b.rstrnt_pj.R;
 import java.util.ArrayList;
 
 public class ListMknnKorAdapter extends RecyclerView.Adapter<ListMknnKorAdapter.CategoryViewHolder> {
+
     public ArrayList<Mkn_Kor> getListMknKor() {
         return listMknKor;
     }
@@ -47,6 +50,7 @@ public class ListMknnKorAdapter extends RecyclerView.Adapter<ListMknnKorAdapter.
                 .thumbnail(Glide.with(context).load(R.drawable.fried_egg_loader))
                 .apply(new RequestOptions().override(490,430))
                 .into(categoryViewHolder.imgPhoto);
+        //categoryViewHolder.mcontainer.setOnClickListener();
     }
 
     @Override
@@ -57,11 +61,13 @@ public class ListMknnKorAdapter extends RecyclerView.Adapter<ListMknnKorAdapter.
     public class CategoryViewHolder extends RecyclerView.ViewHolder {
         TextView tvName;
         ImageView imgPhoto;
+        LinearLayout mcontainer;
 
         public CategoryViewHolder(@NonNull View itemView) {
             super(itemView);
             tvName = itemView.findViewById(R.id.tv_item_name);
             imgPhoto = itemView.findViewById(R.id.img_item_photo);
+            mcontainer = itemView.findViewById(R.id.item_container);
         }
     }
 }
