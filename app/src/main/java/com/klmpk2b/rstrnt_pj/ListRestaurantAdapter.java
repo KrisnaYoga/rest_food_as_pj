@@ -1,4 +1,4 @@
-package com.klmpk2b.rstrnt_pj.Adapter_Makanan;
+package com.klmpk2b.rstrnt_pj;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -7,43 +7,44 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.klmpk2b.rstrnt_pj.Menu_List_Makanan.Makanan_China.Mkn_Chn;
-import com.klmpk2b.rstrnt_pj.R;
 
 import java.util.ArrayList;
 
-public class ListMknnChnAdapter extends RecyclerView.Adapter<ListMknnChnAdapter.CategoryViewHolder> {
-    private Context context;
-    private ArrayList<Mkn_Chn> listMknChn;
+public class ListRestaurantAdapter extends RecyclerView.Adapter<ListRestaurantAdapter.CategoryViewHolder> {
 
-    public ListMknnChnAdapter(Context context) {
+    public ListRestaurantAdapter(Context context) {
         this.context = context;
     }
 
-    public ArrayList<Mkn_Chn> getListMknChn() {
-        return listMknChn;
+    private Context context;
+
+    public ArrayList<Rest> getListRest() {
+        return listRest;
     }
 
-    public void setListMknChn(ArrayList<Mkn_Chn> listMknChn) {
-        this.listMknChn = listMknChn;
+    public void setListRest(ArrayList<Rest> listRest) {
+        this.listRest = listRest;
     }
+
+    private ArrayList<Rest> listRest;
 
     @NonNull
     @Override
     public CategoryViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View itemrow = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_mknn_chn, viewGroup, false);
+        View itemrow = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_list_rest, viewGroup, false);
         return new CategoryViewHolder(itemrow);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CategoryViewHolder categoryViewHolder, int position) {
-        categoryViewHolder.tvName.setText(getListMknChn().get(position).getNamemknchn());
+        categoryViewHolder.tvName.setText(getListRest().get(position).getNamerest());
         Glide.with(context)
-                .load(getListMknChn().get(position).getPhotochn())
+                .load(getListRest().get(position).getPhotorest())
                 .thumbnail(Glide.with(context).load(R.drawable.fried_egg_loader))
                 .apply(new RequestOptions().override(490,430))
                 .into(categoryViewHolder.imgPhoto);
@@ -51,17 +52,20 @@ public class ListMknnChnAdapter extends RecyclerView.Adapter<ListMknnChnAdapter.
 
     @Override
     public int getItemCount() {
-        return getListMknChn().size();
+        return getListRest().size();
     }
 
     public class CategoryViewHolder extends RecyclerView.ViewHolder {
         TextView tvName;
         ImageView imgPhoto;
+        LinearLayout itemcontainer;
 
         public CategoryViewHolder(@NonNull View itemView) {
             super(itemView);
+
             tvName = itemView.findViewById(R.id.tv_item_name);
             imgPhoto = itemView.findViewById(R.id.img_item_photo);
+            itemcontainer = itemView.findViewById(R.id.item_container);
         }
     }
 }
