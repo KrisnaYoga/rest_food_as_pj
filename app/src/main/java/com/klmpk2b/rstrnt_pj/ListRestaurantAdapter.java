@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
+
 import java.util.ArrayList;
 
 public class ListRestaurantAdapter extends RecyclerView.Adapter<ListRestaurantAdapter.CategoryViewHolder> {

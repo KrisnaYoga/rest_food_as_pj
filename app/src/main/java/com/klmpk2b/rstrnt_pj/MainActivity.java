@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView rvCategory;
     private ArrayList<Rest> list_rest = new ArrayList<>();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,4 +54,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 }
