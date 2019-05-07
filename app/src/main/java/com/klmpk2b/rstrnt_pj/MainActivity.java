@@ -8,10 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
 
-import com.klmpk2b.rstrnt_pj.Adapter_Makanan.ListMakananAdapter;
-import com.klmpk2b.rstrnt_pj.Makanan_Data.Makanan;
-import com.klmpk2b.rstrnt_pj.Makanan_Data.Makanan_Data;
-
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
