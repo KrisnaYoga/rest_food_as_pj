@@ -45,6 +45,7 @@ public class Makanan_Activity extends AppCompatActivity {
         intent.putExtra("nama_menu", makanan.getNamemkn());
         intent.putExtra("desc_menu", makanan.getDescmkn());
         intent.putExtra("hrg_menu", makanan.getHarga());
+        intent.putExtra("hrg_asli_menu", makanan.getHrg_asli());
 
         Toast.makeText(this, "You Choose " + makanan.getNamemkn(), Toast.LENGTH_SHORT).show();
         startActivity(intent);

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FormPembelianActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_large"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Pembelian"
+            android:textSize="18sp"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/colorPrimaryText"/>
+
+        <EditText
+            android:background="@drawable/edit_text_round_bg_outline"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/spacing_xlarge"
+            android:minHeight="@dimen/spacing_xmlarge"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            style="@style/EditText.Flat.Grey" />
+
+        <EditText
+            android:background="@drawable/edit_text_round_bg_outline"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/spacing_xlarge"
+            android:layout_marginTop="@dimen/spacing_middle"
+            android:minHeight="@dimen/spacing_xmlarge"
+            android:hint="Phone"
+            android:inputType="phone"
+            style="@style/EditText.Flat.Grey" />
+
+        <EditText
+            android:background="@drawable/edit_text_round_bg_outline"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/spacing_xlarge"
+            android:layout_marginTop="@dimen/spacing_middle"
+            android:minHeight="@dimen/spacing_xmlarge"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            style="@style/EditText.Flat.Grey" />
+
+        <EditText
+            android:id="@+id/alamat"
+            android:background="@drawable/edit_text_round_bg_outline"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/spacing_xlarge"
+            android:layout_marginTop="@dimen/spacing_middle"
+            android:minHeight="@dimen/spacing_xmlarge"
+            android:hint="Alamat"
+            android:inputType="textPostalAddress"
+            style="@style/EditText.Flat.Grey" />
+
+        <TextView
+            android:id="@+id/nama_menu_pilihan"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_round_bg_outline"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/spacing_xlarge"
+            android:minHeight="@dimen/spacing_xmlarge"
+            android:text="Nama Menu"
+            style="@style/EditText.Flat.Grey" />
+
+        <TextView
+            android:id="@+id/harga_menu_pilihan"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_round_bg_outline"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/spacing_xlarge"
+            android:minHeight="@dimen/spacing_xmlarge"
+            android:text="Harga Menu"
+            style="@style/EditText.Flat.Grey" />
+
+        <EditText
+            android:id="@+id/jumlah_makanan"
+            android:background="@drawable/edit_text_round_bg_outline"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/spacing_xlarge"
+            android:layout_marginTop="@dimen/spacing_middle"
+            android:minHeight="@dimen/spacing_xmlarge"
+            android:hint="*Jumlah Pemesanan"
+            android:inputType="number"
+            style="@style/EditText.Flat.Grey" />
+
+        <View
+            android:layout_width="0.0dip"
+            android:layout_height="@dimen/spacing_large" />
+        <!--
+        <com.balysv.materialripple.MaterialRippleLayout
+            android:id="@+id/lyt_next"
+            android:background="@color/more_red"
+            android:layout_marginTop="30dp"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/spacing_xxlarge"
+            style="@style/RippleStyleWhite">
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:textColor="@android:color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Submit" />
+
+                <ImageView
+                    android:layout_width="@dimen/spacing_smlarge"
+                    android:layout_height="@dimen/spacing_smlarge"
+                    android:layout_marginStart="@dimen/spacing_medium"
+                    android:tint="@android:color/white"
+                    app:srcCompat="@drawable/ic_done" />
+
+            </LinearLayout>
+        </com.balysv.materialripple.MaterialRippleLayout>
+        -->
+
+        <Button
+            android:id="@+id/lyt_next"
+            style="@style/Buybtn"
+            android:text="Proses" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
