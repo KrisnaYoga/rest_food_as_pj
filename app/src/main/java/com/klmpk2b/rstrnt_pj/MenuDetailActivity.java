@@ -50,9 +50,4 @@ public class MenuDetailActivity extends AppCompatActivity {
         TextView hrg_menu = findViewById(R.id.hrg_menu);
         hrg_menu.setText(Hrg_Menu);
     }
-
-    @Override
-    public void onClick(View v) {
-
-    }
 }
