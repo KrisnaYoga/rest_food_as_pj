@@ -3,6 +3,16 @@ package com.klmpk2b.rstrnt_pj.Data.Makanan_Data;
 public class Makanan {
     public String namemkn, jenis, harga, photo;
 
+    public String getDescmkn() {
+        return descmkn;
+    }
+
+    public void setDescmkn(String descmkn) {
+        this.descmkn = descmkn;
+    }
+
+    public String descmkn;
+
     public String getNamemkn() {
         return namemkn;
     }

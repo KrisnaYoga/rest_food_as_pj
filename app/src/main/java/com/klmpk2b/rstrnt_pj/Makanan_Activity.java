@@ -39,7 +39,15 @@ public class Makanan_Activity extends AppCompatActivity {
     }
 
     private void showSelectedMenu(Makanan makanan){
+
+        Intent intent = new Intent(this, MenuDetailActivity.class);
+        intent.putExtra("img_menu", makanan.getPhoto());
+        intent.putExtra("nama_menu", makanan.getNamemkn());
+        intent.putExtra("desc_menu", makanan.getDescmkn());
+        intent.putExtra("hrg_menu", makanan.getHarga());
+
         Toast.makeText(this, "You Choose " + makanan.getNamemkn(), Toast.LENGTH_SHORT).show();
+        startActivity(intent);
     }
 
     private void showRecyclerMenuList(){
@@ -52,6 +60,13 @@ public class Makanan_Activity extends AppCompatActivity {
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                 showSelectedMenu(list_makanan_tercategory.get(position));
+                /*
+                Intent intent = new Intent(this, MenuDetailActivity.class);
+                intent.putExtra("img_menu",Makanan_Data.getListData().get(position).getPhoto();
+                intent.putExtra("nama_menu",Makanan_Data.getListData().get(position).getNamemkn();
+                intent.putExtra("desc_menu",Makanan_Data.getListData().get(position).getDescmkn();
+                startActivity(intent);
+                */
             }
         });
     }
