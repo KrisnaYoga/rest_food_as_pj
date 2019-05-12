@@ -1,4 +1,4 @@
-package com.klmpk2b.rstrnt_pj.Makanan_Data;
+package com.klmpk2b.rstrnt_pj.Data.Makanan_Data;
 
 public class Makanan {
     public String namemkn, jenis, harga, photo;

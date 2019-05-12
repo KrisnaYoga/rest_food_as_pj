@@ -8,6 +8,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
 
+import com.klmpk2b.rstrnt_pj.Adapter.ListRestaurantAdapter;
+import com.klmpk2b.rstrnt_pj.Data.Rest_Data.Rest;
+import com.klmpk2b.rstrnt_pj.Data.Rest_Data.Rest_Data;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {

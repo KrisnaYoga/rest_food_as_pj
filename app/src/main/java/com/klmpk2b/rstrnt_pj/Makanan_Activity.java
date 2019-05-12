@@ -5,10 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Toast;
 
-import com.klmpk2b.rstrnt_pj.Adapter_Makanan.ListMakananAdapter;
-import com.klmpk2b.rstrnt_pj.Makanan_Data.Makanan;
-import com.klmpk2b.rstrnt_pj.Makanan_Data.Makanan_Data;
+import com.klmpk2b.rstrnt_pj.Adapter.ListMakananAdapter;
+import com.klmpk2b.rstrnt_pj.Data.Makanan_Data.Makanan;
+import com.klmpk2b.rstrnt_pj.Data.Makanan_Data.Makanan_Data;
 
 import java.util.ArrayList;
 
@@ -36,11 +38,22 @@ public class Makanan_Activity extends AppCompatActivity {
         showRecyclerMenuList();
     }
 
+    private void showSelectedMenu(Makanan makanan){
+        Toast.makeText(this, "You Choose " + makanan.getNamemkn(), Toast.LENGTH_SHORT).show();
+    }
+
     private void showRecyclerMenuList(){
         rvCategory2.setLayoutManager(new LinearLayoutManager(this));
         ListMakananAdapter listMakananAdapter = new ListMakananAdapter(this);
         listMakananAdapter.setListMakanan(list_makanan_tercategory);
         rvCategory2.setAdapter(listMakananAdapter);
+
+        ItemClickSupport.addTo(rvCategory2).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
+            @Override
+            public void onItemClicked(RecyclerView recyclerView, int position, View v) {
+                showSelectedMenu(list_makanan_tercategory.get(position));
+            }
+        });
     }
 
     private void select_list_makanan(){
