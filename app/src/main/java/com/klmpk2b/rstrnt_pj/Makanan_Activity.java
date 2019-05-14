@@ -38,17 +38,14 @@ public class Makanan_Activity extends AppCompatActivity {
         showRecyclerMenuList();
     }
 
-    private void showSelectedMenu(Makanan makanan){
-
-        Intent intent = new Intent(this, MenuDetailActivity.class);
-        intent.putExtra("img_menu", makanan.getPhoto());
-        intent.putExtra("nama_menu", makanan.getNamemkn());
-        intent.putExtra("desc_menu", makanan.getDescmkn());
-        intent.putExtra("hrg_menu", makanan.getHarga());
-        intent.putExtra("hrg_asli_menu", makanan.getHrg_asli());
-
-        Toast.makeText(this, "You Choose " + makanan.getNamemkn(), Toast.LENGTH_SHORT).show();
+    private void showSelectedMakanan(Makanan makanan){
+        Intent intent = new Intent(this , DetailMakananActivity.class);
+        intent.putExtra("nama_makanan",makanan.namemkn);
+        intent.putExtra("harga_makanan",makanan.harga);
+        intent.putExtra("deskripsi_makanan",makanan.description);
+        intent.putExtra("foto_makanan", makanan.photo);
         startActivity(intent);
+        Toast.makeText(this , makanan.namemkn,Toast.LENGTH_SHORT).show();
     }
 
     private void showRecyclerMenuList(){
@@ -60,14 +57,7 @@ public class Makanan_Activity extends AppCompatActivity {
         ItemClickSupport.addTo(rvCategory2).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
-                showSelectedMenu(list_makanan_tercategory.get(position));
-                /*
-                Intent intent = new Intent(this, MenuDetailActivity.class);
-                intent.putExtra("img_menu",Makanan_Data.getListData().get(position).getPhoto();
-                intent.putExtra("nama_menu",Makanan_Data.getListData().get(position).getNamemkn();
-                intent.putExtra("desc_menu",Makanan_Data.getListData().get(position).getDescmkn();
-                startActivity(intent);
-                */
+                showSelectedMakanan(list_makanan_tercategory.get(position));
             }
         });
     }
