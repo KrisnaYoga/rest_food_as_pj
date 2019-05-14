@@ -37,11 +37,5 @@
         <item name="android:textColor">@color/grey_90</item>
         <item name="android:textColorHint">@color/grey_40</item>
     </style>
-    <style name="RippleStyleWhite">
-        <item name="mrl_rippleAlpha">0.2</item>
-        <item name="mrl_rippleColor">#80ffffff</item>
-        <item name="mrl_rippleHover">true</item>
-        <item name="mrl_rippleOverlay">true</item>
-    </style>
 
 </resources>

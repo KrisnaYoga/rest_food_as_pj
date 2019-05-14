@@ -1,17 +1,17 @@
-package com.klmpk2b.rstrnt_pj;
+package com.klmpk2b.rstrnt_pj.Activity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.support.design.widget.TextInputLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.balysv.materialripple.MaterialRippleLayout;
+import com.klmpk2b.rstrnt_pj.MainActivity;
+import com.klmpk2b.rstrnt_pj.R;
 
-public class FormPembelianActivity extends AppCompatActivity implements View.OnClickListener {
+public class FormPembelianActivity extends AppCompatActivity {
 
     private String harga;
     private TextInputLayout input_nama , input_alamat , input_jumlah , input_no_hp;
@@ -20,7 +20,7 @@ public class FormPembelianActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registrasi);
+        setContentView(R.layout.activity_form_pembelian);
 
         Intent intent = getIntent();
         this.harga = intent.getStringExtra("harga");

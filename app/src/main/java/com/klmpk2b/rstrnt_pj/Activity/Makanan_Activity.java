@@ -1,4 +1,4 @@
-package com.klmpk2b.rstrnt_pj;
+package com.klmpk2b.rstrnt_pj.Activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +11,8 @@ import android.widget.Toast;
 import com.klmpk2b.rstrnt_pj.Adapter.ListMakananAdapter;
 import com.klmpk2b.rstrnt_pj.Data.Makanan_Data.Makanan;
 import com.klmpk2b.rstrnt_pj.Data.Makanan_Data.Makanan_Data;
+import com.klmpk2b.rstrnt_pj.ItemClickSupport;
+import com.klmpk2b.rstrnt_pj.R;
 
 import java.util.ArrayList;
 
@@ -39,10 +41,10 @@ public class Makanan_Activity extends AppCompatActivity {
     }
 
     private void showSelectedMakanan(Makanan makanan){
-        Intent intent = new Intent(this , DetailMakananActivity.class);
+        Intent intent = new Intent(this , MenuDetailActivity.class);
         intent.putExtra("nama_makanan",makanan.namemkn);
         intent.putExtra("harga_makanan",makanan.harga);
-        intent.putExtra("deskripsi_makanan",makanan.description);
+        intent.putExtra("deskripsi_makanan",makanan.descmkn);
         intent.putExtra("foto_makanan", makanan.photo);
         startActivity(intent);
         Toast.makeText(this , makanan.namemkn,Toast.LENGTH_SHORT).show();
