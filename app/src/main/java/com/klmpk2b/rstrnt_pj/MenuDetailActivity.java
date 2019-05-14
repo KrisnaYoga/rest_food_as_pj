@@ -17,56 +17,39 @@ import com.klmpk2b.rstrnt_pj.Data.Makanan_Data.Makanan_Data;
 
 public class MenuDetailActivity extends AppCompatActivity {
 
-    Button form_butt;
-    String data_makanan, harga_makanan;
-
+    private  String nama_makanan , harga_makanan ,deskripsi_makanan , foto_makanan;
+    private TextView text_nama_makanan , text_harga_makanan , text_deskripsi_makanan;
+    private ImageView imageView_makanan;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_detail);
+        setContentView(R.layout.activity_detail_makanan);
+        Intent makananIntent = getIntent();
+        this.nama_makanan = makananIntent.getStringExtra("nama_makanan");
+        this.deskripsi_makanan = makananIntent.getStringExtra("deskripsi_makanan");
+        this.harga_makanan = makananIntent.getStringExtra("harga_makanan");
+        this.foto_makanan = makananIntent.getStringExtra("foto_makanan");
 
-        getIncomingIntent();
-        form_butt = findViewById(R.id.goform);
+        this.text_nama_makanan = (TextView) findViewById(R.id.nama_makanan);
+        this.text_deskripsi_makanan = (TextView) findViewById(R.id.Deskripsi_makanan);
+        this.text_harga_makanan = (TextView) findViewById(R.id.harga_makanan);
+        this.imageView_makanan = (ImageView) findViewById(R.id.gambar_makanan);
 
-        form_butt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MenuDetailActivity.this, FormPembelianActivity.class);
-                intent.putExtra("nama_menu_mkn", data_makanan);
-                intent.putExtra("hrg_menu_mkn", harga_makanan);
-                startActivity(intent);
-            }
-        });
+        this.text_nama_makanan.setText(this.nama_makanan);
+        this.text_deskripsi_makanan.setText(this.deskripsi_makanan);
+        this.text_harga_makanan.setText(this.harga_makanan);
 
-    }
-
-
-    private void getIncomingIntent(){
-        String Img_Menu = getIntent().getStringExtra("img_menu");
-        String Nama_Menu = getIntent().getStringExtra("nama_menu");
-        String Desc_Menu = getIntent().getStringExtra("desc_menu");
-        String Hrg_Menu = getIntent().getStringExtra("hrg_menu");
-        String Hrg_Asli_Menu = getIntent().getStringExtra("hrg_asli_menu");
-
-        setName(Img_Menu, Nama_Menu, Desc_Menu, Hrg_Menu, Hrg_Asli_Menu);
-        data_makanan = Nama_Menu;
-        harga_makanan = Hrg_Asli_Menu;
-    }
-
-    private void setName(String Img_Menu, String Nama_Menu, String Desc_Menu, String Hrg_Menu, String Hrg_Asli_Menu){
-        TextView nama_menu = findViewById(R.id.name_menu);
-        nama_menu.setText(Nama_Menu);
-
-        ImageView img_menu = findViewById(R.id.img_menu);
         Glide.with(this)
-                .load(Img_Menu)
+                .load(this.foto_makanan)
                 .thumbnail(Glide.with(this).load(R.drawable.fried_egg_loader))
-                .into(img_menu);
+                .apply(new RequestOptions().override(490,430))
+                .into(this.imageView_makanan);
+    }
 
-        TextView desc_menu = findViewById(R.id.desc_menu);
-        desc_menu.setText(Desc_Menu);
-
-        TextView hrg_menu = findViewById(R.id.hrg_menu);
-        hrg_menu.setText(Hrg_Menu);
+    public void beliMakanan(View view){
+        Intent intent = new Intent(this,RegistrasiActivity.class);
+        intent.putExtra("harga",this.harga_makanan);
+        startActivity(intent);
     }
 }
