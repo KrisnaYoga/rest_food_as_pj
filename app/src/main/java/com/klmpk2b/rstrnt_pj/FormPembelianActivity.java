@@ -13,71 +13,90 @@ import com.balysv.materialripple.MaterialRippleLayout;
 
 public class FormPembelianActivity extends AppCompatActivity implements View.OnClickListener {
 
-    EditText jml_mkn;
-    //MaterialRippleLayout konf;
-    Button konf;
-    String harga_asl;
+    private String harga;
+    private TextInputLayout input_nama , input_alamat , input_jumlah , input_no_hp;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_form_pembelian);
+        setContentView(R.layout.activity_registrasi);
 
-        jml_mkn = findViewById(R.id.jumlah_makanan);
-        konf = findViewById(R.id.lyt_next);
+        Intent intent = getIntent();
+        this.harga = intent.getStringExtra("harga");
 
-        konf.setOnClickListener(this);
-        getIncomingIntent();
+        this.input_nama = (TextInputLayout) findViewById(R.id.input_nama);
+        this.input_alamat = (TextInputLayout) findViewById(R.id.input_alamat);
+        this.input_jumlah = (TextInputLayout) findViewById(R.id.input_jumlah);
+        this.input_no_hp = (TextInputLayout) findViewById(R.id.input_Hp);
     }
 
-    private void getIncomingIntent(){
-        String Nama_Menu = getIntent().getStringExtra("nama_menu_mkn");
-        String Harga_Asli = getIntent().getStringExtra("hrg_menu_mkn");
-        setName(Nama_Menu, Harga_Asli);
-        harga_asl = Harga_Asli;
-    }
+    public void onConfirm(View view) {
+        if(validate()){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Total Pembayaran anda "+ this.harga + " , Apakah anda setuju ?");
+            builder.setTitle("Alert !");
+            builder.setCancelable(false);
 
-    private void setName(String Nama_Menu, String Harga_Asli){
-        TextView nama_menu = findViewById(R.id.nama_menu_pilihan);
-        nama_menu.setText(Nama_Menu);
-        TextView harga_menu = findViewById(R.id.harga_menu_pilihan);
-        harga_menu.setText(Harga_Asli);
-    }
 
-    @Override
-    public void onClick(View v) {
-        if (v.getId()  == R.id.lyt_next) {
-            String jumlah = jml_mkn.getText().toString().trim();
 
-            boolean isEmptyFields = false;
-            boolean isInvalidDouble = false;
-
-            if (TextUtils.isEmpty(jumlah)) {
-                isEmptyFields = true;
-                jml_mkn.setError("Harus ada jumlah yang dibeli, Minimal 1");
-            }
-
-            Double jml_pil = toDouble(jumlah);
-            Double hrg_asli = toDouble(harga_asl);
-
-            if (jml_pil == null){
-                isInvalidDouble = true;
-                jml_mkn.setError("Jumlah harus valid");
-            }
-
-            if(!isEmptyFields && !isInvalidDouble){
-                double total_Pembayaran = jml_pil * hrg_asli;
-                int ttl = (int)total_Pembayaran;
-                Toast.makeText(this, "Jumlah Yang Harus Dibayar " + ttl, Toast.LENGTH_SHORT).show();
-            }
+            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    onClickYes();
+                }
+            });
+            builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
         }
+
+
     }
 
-    Double toDouble(String str){
-        try {
-            return Double.valueOf(str);
-        } catch (NumberFormatException e){
-            return null;
+    private void onClickYes(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Proses Pembayaran Success");
+        builder.setTitle("Success !");
+        builder.setCancelable(false);
+        final Intent home = new Intent(this , MainActivity.class);
+
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                startActivity(home);
+                finishAffinity();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    private boolean validate(){
+        boolean validasi = true;
+        if(this.input_nama.getEditText().getText().toString().isEmpty()){
+            this.input_nama.setError("Nama harus diisi");
+            validasi = false;
         }
+        else if(this.input_alamat.getEditText().getText().toString().isEmpty()){
+            this.input_alamat.setError(" Alamat harus diisi");
+            validasi = false;
+        }
+        else if(this.input_jumlah.getEditText().getText().toString().isEmpty()){
+            this.input_jumlah.setError(" Jumlah Harus diisi");
+            validasi = false;
+        }
+        else if(this.input_no_hp.getEditText().getText().toString().isEmpty()){
+            this.input_no_hp.setError(" No Hp harus diisi");
+            validasi = false;
+        }
+
+        return validasi;
+
     }
 }
