@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.FormPembelianActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_large"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Invoice"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="Pembelian"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="  Identitas Pembeli :"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/inv_nama_pb"
+            style="@style/EditText.Flat.Grey"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/spacing_xlarge"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_round_bg_outline"
+            android:minHeight="@dimen/spacing_xmlarge"
+            android:text="Nama Pembeli" />
+
+        <TextView
+            android:id="@+id/inv_phone_pb"
+            style="@style/EditText.Flat.Grey"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/spacing_xlarge"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_round_bg_outline"
+            android:minHeight="@dimen/spacing_xmlarge"
+            android:text="Phone Pembeli" />
+
+        <TextView
+            android:id="@+id/inv_email_pb"
+            style="@style/EditText.Flat.Grey"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/spacing_xlarge"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_round_bg_outline"
+            android:minHeight="@dimen/spacing_xmlarge"
+            android:text="Email Pembeli" />
+
+        <TextView
+            android:id="@+id/inv_alamat_pb"
+            style="@style/EditText.Flat.Grey"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/spacing_xlarge"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_round_bg_outline"
+            android:minHeight="@dimen/spacing_xmlarge"
+            android:text="Alamat Pembeli" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="  Makanan :"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_middle">
+
+            <TextView
+                android:layout_width="0.0dp"
+                android:layout_weight="1.0"
+                android:layout_height="@dimen/spacing_xlarge"
+                android:minHeight="@dimen/spacing_xmlarge"
+                android:text="  Nama"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="16sp" />
+            <View
+                android:layout_width="@dimen/spacing_middle"
+                android:layout_height="0.0dip" />
+            <TextView
+                android:id="@+id/inv_nama_makanan"
+                android:layout_width="0.0dp"
+                android:layout_height="@dimen/spacing_xlarge"
+                android:background="@drawable/edit_text_round_bg_outline"
+                android:minHeight="@dimen/spacing_xmlarge"
+                android:layout_weight="1.0"
+                android:text="Nama Menu"
+                style="@style/EditText.Flat.Grey"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_middle">
+            <TextView
+                android:layout_width="0.0dp"
+                android:layout_weight="1.0"
+                android:layout_height="@dimen/spacing_xlarge"
+                android:minHeight="@dimen/spacing_xmlarge"
+                android:text="  Harga"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="16sp" />
+            <View
+                android:layout_width="@dimen/spacing_middle"
+                android:layout_height="0.0dip" />
+            <TextView
+                android:id="@+id/inv_harga_makanan"
+                android:layout_width="0.0dp"
+                android:layout_height="@dimen/spacing_xlarge"
+                android:background="@drawable/edit_text_round_bg_outline"
+                android:minHeight="@dimen/spacing_xmlarge"
+                android:layout_weight="1.0"
+                android:text="Harga Menu"
+                style="@style/EditText.Flat.Grey"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_middle">
+            <TextView
+                android:layout_width="0.0dp"
+                android:layout_weight="1.0"
+                android:layout_height="@dimen/spacing_xlarge"
+                android:minHeight="@dimen/spacing_xmlarge"
+                android:text="  Jumlah"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="16sp" />
+            <View
+                android:layout_width="@dimen/spacing_middle"
+                android:layout_height="0.0dip" />
+            <TextView
+                android:id="@+id/inv_jumlah_mkn"
+                android:layout_width="0.0dp"
+                android:layout_height="@dimen/spacing_xlarge"
+                android:background="@drawable/edit_text_round_bg_outline"
+                android:minHeight="@dimen/spacing_xmlarge"
+                android:layout_weight="1.0"
+                android:text="Jumlah Dibeli"
+                style="@style/EditText.Flat.Grey"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_middle">
+            <TextView
+                android:layout_width="0.0dp"
+                android:layout_weight="1.0"
+                android:layout_height="@dimen/spacing_xlarge"
+                android:minHeight="@dimen/spacing_xmlarge"
+                android:text="  Total Pembayaran"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="16sp" />
+            <View
+                android:layout_width="@dimen/spacing_middle"
+                android:layout_height="0.0dip" />
+            <TextView
+                android:id="@+id/inv_total_pbian"
+                android:layout_width="0.0dp"
+                android:layout_height="@dimen/spacing_xlarge"
+                android:background="@drawable/edit_text_round_bg_outline"
+                android:minHeight="@dimen/spacing_xmlarge"
+                android:layout_weight="1.0"
+                android:text="Total Pembelian"
+                style="@style/EditText.Flat.Grey"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="0.0dip"
+            android:layout_height="@dimen/spacing_large" />
+
+        <Button
+            android:id="@+id/lyt_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="konfirmasi"
+            android:theme="@style/PrimaryButton"
+            android:onClick="onConfirm"/>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

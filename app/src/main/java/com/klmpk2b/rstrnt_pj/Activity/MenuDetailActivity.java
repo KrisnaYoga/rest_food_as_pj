@@ -13,9 +13,10 @@ import com.klmpk2b.rstrnt_pj.R;
 
 public class MenuDetailActivity extends AppCompatActivity {
 
-    private  String nama_makanan , harga_makanan ,deskripsi_makanan , foto_makanan;
+    private String nama_makanan , harga_makanan ,deskripsi_makanan , foto_makanan;
     private TextView text_nama_makanan , text_harga_makanan , text_deskripsi_makanan;
     private ImageView imageView_makanan;
+    private String harga_asl_makanan;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class MenuDetailActivity extends AppCompatActivity {
         this.deskripsi_makanan = makananIntent.getStringExtra("deskripsi_makanan");
         this.harga_makanan = makananIntent.getStringExtra("harga_makanan");
         this.foto_makanan = makananIntent.getStringExtra("foto_makanan");
+        this.harga_asl_makanan = makananIntent.getStringExtra("hrg_asli_menu");
 
         this.text_nama_makanan = (TextView) findViewById(R.id.nama_makanan);
         this.text_deskripsi_makanan = (TextView) findViewById(R.id.Deskripsi_makanan);
@@ -47,6 +49,8 @@ public class MenuDetailActivity extends AppCompatActivity {
     public void beliMakanan(View view){
         Intent intent = new Intent(this, FormPembelianActivity.class);
         intent.putExtra("harga",this.harga_makanan);
+        intent.putExtra("nama_menu_mkn", this.nama_makanan);
+        intent.putExtra("hrg_menu_mkn", this.harga_asl_makanan);
         startActivity(intent);
     }
 }

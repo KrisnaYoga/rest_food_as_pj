@@ -46,6 +46,7 @@ public class Makanan_Activity extends AppCompatActivity {
         intent.putExtra("harga_makanan",makanan.harga);
         intent.putExtra("deskripsi_makanan",makanan.descmkn);
         intent.putExtra("foto_makanan", makanan.photo);
+        intent.putExtra("hrg_asli_menu", makanan.hrg_asli);
         startActivity(intent);
         Toast.makeText(this , makanan.namemkn,Toast.LENGTH_SHORT).show();
     }

@@ -1,73 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    tools:context=".Activity.FormPembelianActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Form Pembelian"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:gravity="center_horizontal"
-        android:layout_margin="@dimen/activity_vertical_margin"/>
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_nama"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_vertical_margin"
-        app:errorEnabled="true">
-        <android.support.design.widget.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nama Pembeli"
-            android:inputType="text"/>
-    </android.support.design.widget.TextInputLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_large"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_jumlah"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_vertical_margin"
-        app:errorEnabled="true">
-        <android.support.design.widget.TextInputEditText
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Jumlah"
-            android:inputType="number"/>
-    </android.support.design.widget.TextInputLayout>
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_alamat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_vertical_margin"
-        app:errorEnabled="true">
-        <android.support.design.widget.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Pembelian"
+            android:textSize="18sp"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/colorPrimaryText"/>
+
+         <EditText
+             android:id="@+id/nama_pembeli"
+             android:layout_width="fill_parent"
+             android:layout_height="@dimen/spacing_xlarge"
+             android:minHeight="@dimen/spacing_xmlarge"
+             android:layout_marginTop="@dimen/spacing_middle"
+             android:background="@drawable/edit_text_round_bg_outline"
+             android:hint="Name"
+             android:inputType="textPersonName"
+             style="@style/EditText.Flat.Grey" />
+
+        <EditText
+            android:id="@+id/phone_pembeli"
+            android:background="@drawable/edit_text_round_bg_outline"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/spacing_xlarge"
+            android:layout_marginTop="@dimen/spacing_middle"
+            android:minHeight="@dimen/spacing_xmlarge"
+            android:hint="Phone"
+            android:inputType="phone"
+            style="@style/EditText.Flat.Grey" />
+
+        <EditText
+            android:id="@+id/email_pembeli"
+            android:background="@drawable/edit_text_round_bg_outline"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/spacing_xlarge"
+            android:layout_marginTop="@dimen/spacing_middle"
+            android:minHeight="@dimen/spacing_xmlarge"
+            android:hint="Email : abc@abc.abc"
+            android:inputType="textEmailAddress"
+            style="@style/EditText.Flat.Grey" />
+
+        <EditText
+            android:id="@+id/alamat_pembeli"
+            android:background="@drawable/edit_text_round_bg_outline"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/spacing_xlarge"
+            android:layout_marginTop="@dimen/spacing_middle"
+            android:minHeight="@dimen/spacing_xmlarge"
             android:hint="Alamat"
-            android:inputType="text"/>
-    </android.support.design.widget.TextInputLayout>
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_Hp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_vertical_margin"
-        app:errorEnabled="true">
-        <android.support.design.widget.TextInputEditText
-            android:layout_width="match_parent"
+            android:inputType="textPostalAddress"
+            style="@style/EditText.Flat.Grey" />
+
+        <TextView
+            android:id="@+id/nama_menu_pilihan"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_round_bg_outline"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/spacing_xlarge"
+            android:minHeight="@dimen/spacing_xmlarge"
+            android:text="Nama Menu"
+            style="@style/EditText.Flat.Grey" />
+
+        <TextView
+            android:id="@+id/harga_menu_pilihan"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_round_bg_outline"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/spacing_xlarge"
+            android:minHeight="@dimen/spacing_xmlarge"
+            android:text="Harga Menu"
+            style="@style/EditText.Flat.Grey" />
+
+        <EditText
+            android:id="@+id/jumlah_makanan"
+            android:background="@drawable/edit_text_round_bg_outline"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/spacing_xlarge"
+            android:layout_marginTop="@dimen/spacing_middle"
+            android:minHeight="@dimen/spacing_xmlarge"
+            android:hint="*Jumlah Pemesanan"
+            android:inputType="number"
+            style="@style/EditText.Flat.Grey" />
+
+        <View
+            android:layout_width="0.0dip"
+            android:layout_height="@dimen/spacing_large" />
+
+        <Button
+            android:id="@+id/lyt_next"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Nomer HP"
-            android:inputType="phone"/>
-    </android.support.design.widget.TextInputLayout>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="konfirmasi"
-        android:theme="@style/PrimaryButton"
-        android:onClick="onConfirm"/>
-</LinearLayout>
+            android:layout_gravity="center_horizontal"
+            android:text="Proses"
+            android:theme="@style/PrimaryButton"
+            android:onClick="onClick"/>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
